@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import FriendCard from "./components/FriendCard";
 import Wrapper from "./components/Wrapper";
-import Title from "./components/Title";
 import friends from "./friends.json";
+import "./App.css";
 
-let currectScore = 0;
+let currentScore = 0;
 let highScore = 0;
 const styles = {
   navbarStyle :{
@@ -31,11 +31,11 @@ class App extends React.Component {
     const friends = this.state.friends.map(friend => {
       if (friend.id === id && friend.clicked === true){
         friend.clicked = true;
-        currectScore++;
+        currentScore++;
       } else if (friend.id === id && friend.clicked === true){
         alert("you lose");
         if (currentScore > highScore){
-          highScore = currectScore
+          highScore = currentScore
         }
         this.gameOver()
       }
@@ -56,7 +56,7 @@ class App extends React.Component {
       friend.clicked = false;
       return friend
     })
-    currectScore = 0;
+    currentScore = 0;
     this.setState({ friends })
   }
 
