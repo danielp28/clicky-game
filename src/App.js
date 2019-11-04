@@ -40,7 +40,9 @@ class App extends React.Component {
         this.gameOver()
       }
       return friend
+      
     })
+    this.setState({ friends })
   }
 
   shuffle = () => {
